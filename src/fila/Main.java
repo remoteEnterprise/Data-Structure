@@ -3,7 +3,6 @@ package fila;
 import grafos.Node;
 
 public class Main {
-
 	public static void main(String[] args) {
 		Fila fila = new Fila(3);
 		Node n0 = new Node(0);
@@ -20,5 +19,4 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
-
 }
