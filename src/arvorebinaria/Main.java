@@ -1,34 +1,51 @@
 package arvorebinaria;
 
+import java.util.Random;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Node n0 = new Node(37, new Integer(10));
-		Node n1 = new Node(24, new Integer(11));
-		Node n2 = new Node(42, new Integer(12));
-		Node n3 = new Node(7, new Integer(13));
-		Node n4 = new Node(32, new Integer(14));
-		Node n5 = new Node(40, new Integer(15));
-		Node n6 = new Node(42, new Integer(16));
-		Node n7 = new Node(2, new Integer(17));
-		Node n8 = new Node(120, new Integer(18));
 		Tree tree = new Tree();
-		tree.inserirArvore((Tree) tree, n0);
-		tree.inserirArvore((Tree) tree, n1);
-		tree.inserirArvore((Tree) tree, n2);
-		tree.inserirArvore((Tree) tree, n3);
-		tree.inserirArvore((Tree) tree, n4);
-		tree.inserirArvore((Tree) tree, n5);
-		tree.inserirArvore((Tree) tree, n6);
-		tree.inserirArvore((Tree) tree, n7);
-		tree.inserirArvore((Tree) tree, n8);
-		System.out.println(tree.predecessorArvore(tree.getRoot()).getKey());
+		Node[] nodes = new Node[1000000];
+		
+		for(int i = 0; i < nodes.length; i++) {
+			nodes[i] = new Node(i, "");
+		}
+		
+		embaralhar(nodes);
+		
+		for(int i = 0; i < nodes.length; i++) {
+			tree.inserirArvore(tree, nodes[i]);
+		}
+//		System.out.println(tree.predecessorArvore(tree.getRoot()).getKey());
 		System.out.println(tree.getRoot().getKey());
-		tree.percorrerInorder(tree.getRoot());
-		System.out.println("");
-		tree.percorrerPreorder(tree.getRoot());
-		System.out.println("");
-		tree.percorrerPosorder(tree.getRoot());
+//		tree.percorrerInorder(tree.getRoot());
+//		System.out.println("");
+//		tree.percorrerPreorder(tree.getRoot());
+//		System.out.println("");
+//		tree.percorrerPosorder(tree.getRoot());
+	}
+	
+	public static Node Vetor2Arvore(Node[] nodes, int ini, int fim) {
+		if(ini > fim) {
+			return null;
+		}
+		int mid = ini + (fim - ini) / 2;
+		Node x = nodes[mid];
+		x.setLeftSon(Vetor2Arvore(nodes, ini, mid-1));
+		x.setRightSon(Vetor2Arvore(nodes, mid+1, fim));
+		return x;
+	}
+	
+	public static void embaralhar(Node[] nodes) {
+		int n = nodes.length;
+		Random rand = new Random();
+		for(int i = 0; i < n; i++) {
+			int r = rand.nextInt(n);
+			Node temp = nodes[i];
+			nodes[i] = nodes[r];
+			nodes[r] = temp;
+		}
 	}
 
 }
