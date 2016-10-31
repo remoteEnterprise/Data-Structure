@@ -1,7 +1,7 @@
 package grafos;
 
 public class Node {
-	private int num;
+	private int num;				
 	private Node predecessor;
 	private int distancia;
 	private String cor;
