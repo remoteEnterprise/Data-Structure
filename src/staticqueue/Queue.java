@@ -30,7 +30,6 @@ public class Queue implements QueueIF {
 		this.nodes[this.tail] = n;
 		this.tail = (this.tail + 1) % this.capacity;
 		this.size++;
-		System.out.println("Enfileirou "+n.getNum());
 	}
 
 	@Override
