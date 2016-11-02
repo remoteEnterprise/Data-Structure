@@ -32,7 +32,6 @@ public class SimpleLinkedListImpl<E> implements SimpleLinkedListIF<E> {
 		return true;
 	}
 
-	//TODO FINISH UP METHOD REMOVE FIRST
 	@Override
 	public Node<E> removeFirst() throws SimpleLinkedListEmptyException{
 		if(this.isEmpty()) {
@@ -41,7 +40,17 @@ public class SimpleLinkedListImpl<E> implements SimpleLinkedListIF<E> {
 		Node<E> firstTemp = this.front();
 		this.nextFront.setPrev(null);
 		this.front = this.nextFront;
+		changeNextFront();
 		return firstTemp;
+	}
+
+	private void changeNextFront() throws SimpleLinkedListEmptyException {
+		for(Node<E> end = this.tail.getPrev(); end != this.front(); end = end.getPrev()) {
+			if(end.getPrev() == this.front) {
+				this.nextFront = end;
+				break;
+			}
+		}
 	}
 
 	@Override
