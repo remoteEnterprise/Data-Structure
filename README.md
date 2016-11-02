@@ -1,8 +1,8 @@
 # Data-Structure
 Repositorio para codigos sobre estrutura de dados.
 
-- ArvoreBinaria 	(Terminada)
-- Filas Estáticas    (Terminada)
-- Lista Simlemente Encadeada adaptada para Filas Dinâmicas (Terminada) //SimpleLinkedList
-- Grafos        		(Ainda não terminado)
-- Lista Duplamente Encadeada LinkedList (Quase terminada)
+- ArvoreBinaria 	(Terminada) //arvorebinaria
+- Filas Estáticas    (Terminada) //staticqueue
+- Lista Simlemente Encadeada adaptada para Filas Dinâmicas (Terminada) //simplelinkedlist
+- Grafos        		(Ainda não terminado) //grafos
+- Lista Duplamente Encadeada LinkedList (Quase terminada) //linkedlist
