@@ -1,4 +1,4 @@
-package queue;
+package staticqueue;
 
 import grafos.Node;
 /**
