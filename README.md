@@ -3,6 +3,6 @@ Repositorio para codigos sobre estrutura de dados.
 
 - ArvoreBinaria 	(Terminada)
 - Filas Estáticas    (Terminada)
-- Filas Dinâmicas (A ser iniciado)
+- Lista Simlemente Encadeada adaptada para Filas Dinâmicas (Terminada) //SimpleLinkedList
 - Grafos        		(Ainda não terminado)
 - Lista Duplamente Encadeada LinkedList (Quase terminada)
