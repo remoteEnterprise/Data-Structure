@@ -7,10 +7,10 @@ import grafos.Node;
  * "Freedom call, the cry of barren souls"
  */
 public class Queue implements QueueIF {
-	private int head;					//F
-	private int tail;						//R
+	private int head;	//F
+	private int tail;	//R
 	private Node[] nodes;
-	private int capacity;				//N
+	private int capacity;	//N
 	private int size;
 	
 	public Queue(int cap) {
@@ -26,10 +26,10 @@ public class Queue implements QueueIF {
 		if(this.size() == this.capacity) {
 			throw new QueueFullException();
 		}
+		
 		this.nodes[this.tail] = n;
 		this.tail = (this.tail + 1) % this.capacity;
-		this.size++;
-		System.out.println("Enfileirou "+n.getNum());
+		this.size++;		
 	}
 
 	@Override
@@ -37,6 +37,7 @@ public class Queue implements QueueIF {
 		if(this.isEmpty()) {
 			throw new QueueEmptyException();
 		}
+		
 		Node temp = this.nodes[this.head];
 		this.head = (this.head + 1) % this.capacity;
 		this.size--;
@@ -45,7 +46,7 @@ public class Queue implements QueueIF {
 
 	@Override
 	public int size() {
-        return  this.size;
+        	return  this.size;
 	}
 
 	@Override
