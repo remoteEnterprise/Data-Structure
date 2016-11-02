@@ -1,4 +1,4 @@
-package queue;
+package staticqueue;
 
 public class QueueFullException extends Exception {
 
